@@ -77,10 +77,6 @@ For projects requiring enhanced scalability and reliability, the following Googl
 - **Cloud Load Balancing**: For traffic distribution.
 - **Cloud IAM**: For secure authentication and authorization.
 
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE.md) - see the file for details.
