@@ -1,73 +1,92 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Insurance Policy Management API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This project implements a RESTful API service for managing insurance policies using NestJS, a progressive Node.js framework. The API allows for creating, reading, updating, and deleting insurance policies. It features basic authentication, middleware for logging and error handling, and connects to a mock database for demonstration purposes. The backend infrastructure is designed to be scalable and reliable, integrating with Google Cloud services for enhanced performance.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Features
 
-## Description
+- CRUD operations for insurance policies.
+- Basic authentication with JWT.
+- Middleware integration for logging and error handling.
+- Connection to a PostgreSQL mock database.
+- Scalable backend infrastructure design suitable for cloud deployment.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Getting Started
 
-## Installation
+### Prerequisites
 
-```bash
-$ npm install
-```
+- Node.js (v14 or later).
+- NestJS CLI.
+- PostgreSQL installed locally or access to a PostgreSQL database.
+- Google Cloud account (optional for cloud deployment enhancements).
 
-## Running the app
+### Installation
 
-```bash
-# development
-$ npm run start
+1. **Clone the repository:**
 
-# watch mode
-$ npm run start:dev
+    ```bash
+    git clone <repository-url>
+    ```
 
-# production mode
-$ npm run start:prod
-```
+2. **Navigate to the project directory:**
 
-## Test
+    ```bash
+    cd insurance-api
+    ```
 
-```bash
-# unit tests
-$ npm run test
+3. **Install dependencies:**
 
-# e2e tests
-$ npm run test:e2e
+    ```bash
+    npm install
+    ```
 
-# test coverage
-$ npm run test:cov
-```
+4. **Configure your database connection in `app.module.ts`** by updating the TypeORM configuration with your database credentials.
 
-## Support
+5. **(Optional) Set up environment variables** for database credentials and JWT secret in a `.env` file for better security and configurability.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Running the Application
 
-## Stay in touch
+- **Run the application in development mode:**
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+    ```bash
+    npm run start:dev
+    ```
+
+    The API will be available at `http://localhost:3000/`.
+
+### Accessing API Documentation
+
+This project utilizes Swagger for API documentation. Once the application is running, access the Swagger UI at `http://localhost:3000/api` to view the available endpoints and their specifications.
+
+## Backend Infrastructure Design
+
+The backend infrastructure is designed with scalability and reliability in mind. It incorporates:
+
+- **Microservices Architecture**: For handling different aspects of the system efficiently.
+- **API Gateway**: As the single entry point, routing requests to appropriate services.
+- **Message Queues**: For asynchronous communication between services.
+- **Load Balancers**: To distribute incoming traffic and ensure high availability.
+- **Database Design**: Utilizing PostgreSQL for structured data and considering NoSQL options for scalability.
+
+### Google Cloud Services Integration (Optional)
+
+For projects requiring enhanced scalability and reliability, the following Google Cloud services are recommended:
+
+- **Compute Engine or Kubernetes Engine**: For hosting services.
+- **Pub/Sub**: For message queue management.
+- **Cloud SQL & Firestore**: For managed database services.
+- **Cloud Load Balancing**: For traffic distribution.
+- **Cloud IAM**: For secure authentication and authorization.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+This project is licensed under the [MIT License](LICENSE.md) - see the file for details.
+
+## Acknowledgments
+
+- NestJS for the comprehensive and powerful framework.
+- TypeORM for database management.
+- Google Cloud for scalable cloud services.
